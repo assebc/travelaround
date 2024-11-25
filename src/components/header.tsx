@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel, Popover, PopoverButton, PopoverGroup, PopoverPanel, Transition } from "@headlessui/react";
 import { BotIcon, ChevronDown, HomeIcon, Menu, MoveRightIcon, PhoneIcon, Plane, PlayCircleIcon, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Fragment, useState } from "react";
 
 interface Action {
@@ -17,19 +18,19 @@ const products: Action[] = [
   {
     name: "Book a Stay",
     description: "Find a place to stay",
-    href: "#",
+    href: "/stays",
     icon: HomeIcon
   },
   {
     name: "Book a Flight",
     description: "Find a flight",
-    href: "#",
+    href: "/flights",
     icon: Plane
   },
   {
     name: "Contact our Support Team",
     description: "Get help with your account",
-    href: "#",
+    href: "/support",
     icon: BotIcon
   }
 ];
@@ -48,7 +49,7 @@ function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Belu</span>
-            {/* <img className="h-12 w-auto" src="" alt="logo" /> */}
+            <Image className="h-12 w-auto" src="/favicon.png" alt="logo" width={1000} height={1000} />
           </Link>
         </div>
 
@@ -87,7 +88,7 @@ function Header() {
                           <item.icon className="h-6 w-6 text-[#f05e23] group-hover:text-[#f9812a]" aria-hidden="true" />
                         </div>
                         <div className="flex-auto">
-                          <a href="{itme.href}" className="block font-semibold text-[#f05e23]">
+                          <a href={item.href} className="block font-semibold text-[#f05e23]">
                             { item.name }
                             <span className="absolute inset-0" />
                           </a>
@@ -119,7 +120,7 @@ function Header() {
         </PopoverGroup>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-center">
-          <a href="#" className="text-sm font-semibold leading-6 text-white">
+          <a href="/auth" className="text-sm font-semibold leading-6 text-white">
             Log in
             <MoveRightIcon className="h-4 w-4 ps-1 inline-block" aria-hidden="true" />
           </a>
@@ -135,10 +136,10 @@ function Header() {
           <DialogPanel
             className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#f05e23] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
-                <a href="#" className="-m-1.5 p-1.5">
+                <Link href="/" className="-m-1.5 p-1.5">
                   <span className="sr-only">Belu</span>
-                  {/* <img className="h-8 w-auto" src="" alt="logo" /> */}
-                </a>
+                  <Image className="h-8 w-auto" src="/public/favicon.png" alt="logo" />
+                </Link>
                 <button type="button" className="-m-2.5 rounded-md p-2.5 text-white"
                   onClick={() => setMobileMenuOpen(false)}>
                   <span className="sr-only">Close menu</span>

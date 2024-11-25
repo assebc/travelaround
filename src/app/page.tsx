@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
+import SearchForm from "@/components/searchform";
+import { trendingData } from "@/data/trending";
 
 export default function Home() {
-  const as = [];
-
   return (
     <main className="bg-[#f9812a]">
       <section className="max-w-7xl mx-auto p-6">
@@ -12,7 +13,7 @@ export default function Home() {
       </section>
 
       <section className="m-4 mt-0 -mb-14 px-2 lg:px-4">
-        {/* <SearchForm /> */}
+        <SearchForm />
       </section>
 
       <section className="mx-auto max-w-7xl mt-10 p-6 bg-white rounded-t-lg">
@@ -24,7 +25,7 @@ export default function Home() {
         </div>
 
         <div className="flex space-x-4 py-5 overflow-x-scroll">
-          {as.map((item) => (
+          {trendingData.map((item) => (
             <div
               key={ item.id }
               className="space-y-1 shrink-0 cursor-pointer">
@@ -32,7 +33,9 @@ export default function Home() {
                 key={ item.id }
                 className="w-80 h-72 object-cover rounded-lg pb-2"
                 src={ item.src }
-                alt="" />
+                width={540}
+                height={320}
+                alt={ item.location + item.id } />
 
               <p className="font-bold">{ item.title }</p>
               <p className="">{ item.location }</p>
