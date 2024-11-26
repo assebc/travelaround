@@ -12,7 +12,7 @@ import { format } from "date-fns";
 
 import { Calendar } from "./ui/calendar";
 import { cn } from "@/lib/utils";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { Input } from "./ui/input";
 
 export const formSchema = z.object({
@@ -93,7 +93,6 @@ function SearchForm() {
                 <FormControl>
                   <Input placeholder="London, UK" {...field} />
                 </FormControl>
-                <FormMessage />
               </FormItem>
             )}
           />
@@ -114,7 +113,7 @@ function SearchForm() {
                         name="dates"
                         variant={"outline"}
                         className={cn(
-                          "w-full lg:w-[300px] justify-start text-left font-normal",
+                          "w-full lg:w-[300px] h-[40px] justify-start text-left font-normal",
                           !field.value.from && "text-muted-foreground"
                         )}
                       >
@@ -148,7 +147,6 @@ function SearchForm() {
                     />
                   </PopoverContent>
                 </Popover>
-                <FormMessage />
               </FormItem>
             )}
           />
@@ -165,7 +163,6 @@ function SearchForm() {
                   <FormControl>
                     <Input type="number" placeholder="Adults" {...field} />
                   </FormControl>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -181,7 +178,6 @@ function SearchForm() {
                   <FormControl>
                     <Input type="number" placeholder="Children" {...field} />
                   </FormControl>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -197,14 +193,13 @@ function SearchForm() {
                   <FormControl>
                     <Input type="number" placeholder="rooms" {...field} />
                   </FormControl>
-                  <FormMessage />
                 </FormItem>
               )}
             />
           </div>
 
           <div className="mt-auto">
-            <Button type="submit" className="bg-[#f05e23] text-base">
+            <Button type="submit" className="bg-[#f05e23] text-base h-[40px]">
               Search
             </Button>
           </div>
