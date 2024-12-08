@@ -48,7 +48,7 @@ function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Belu</span>
+            <span className="sr-only">TravelAround</span>
             <Image className="h-12 w-auto" src="/favicon.png" alt="logo" width={1000} height={1000} />
           </Link>
         </div>
@@ -137,7 +137,7 @@ function Header() {
             className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#f05e23] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
                 <Link href="/" className="-m-1.5 p-1.5">
-                  <span className="sr-only">Belu</span>
+                  <span className="sr-only">TravelAround</span>
                   <Image className="h-8 w-auto" src="/public/favicon.png" alt="logo" />
                 </Link>
                 <button type="button" className="-m-2.5 rounded-md p-2.5 text-white"

@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Belu",
-  description: "Belu - Find your home away from home",
+  title: "TravelAround",
+  description: "TravelAround - Find your home away from home",
 };
 
 export default function RootLayout({
